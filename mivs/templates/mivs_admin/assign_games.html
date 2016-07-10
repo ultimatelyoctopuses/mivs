@@ -39,7 +39,7 @@
         already assigned to {{ judge.full_name }}.
     {% else %}
         Below is a list of games not already assigned to {{ judge.full_name }} which matches one or more of their preferred
-        genres ({{ judge.genres_labels|join:' / ' }}).
+        genres ({{ judge.genres_labels|join(' / ') }}).
     {% endif %}
 
     <form method="post" action="assign">
@@ -60,7 +60,7 @@
                 <tr>
                     <td>{{ game.title }}</td>
                     <td>{{ game.studio.name }}</td>
-                    <td>{{ game.genres_labels|join:' / ' }}</td>
+                    <td>{{ game.genres_labels|join(' / ') }}</td>
                     <td><input type="checkbox" name="game_id" value="{{ game.id }}" /></td>
                 </tr>
             {% endfor %}
@@ -94,7 +94,7 @@
                 <tr>
                     <td>{{ game.title }}</td>
                     <td>{{ game.studio.name }}</td>
-                    <td>{{ game.genres_labels|join:' / ' }}</td>
+                    <td>{{ game.genres_labels|join(' / ') }}</td>
                     <td><input type="checkbox" name="game_id" value="{{ game.id }}" /></td>
                 </tr>
             {% endfor %}
