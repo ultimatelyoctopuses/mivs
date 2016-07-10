@@ -5,7 +5,7 @@
 
 <form method="post" action="studio" role="form" class="form-horizontal">
     <input type="hidden" name="id" value="{{ studio.id }}" />
-    {% csrf_token %}
+    {{ csrf_token() }}
 
     <div class="form-group">
         <label class="col-sm-2 control-label">Studio Name:</label>

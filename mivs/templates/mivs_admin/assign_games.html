@@ -43,7 +43,7 @@
     {% endif %}
 
     <form method="post" action="assign">
-        {% csrf_token %}
+        {{ csrf_token() }}
         <input type="hidden" name="judge_id" value="{{ judge.id }}" />
         <input type="hidden" name="return_to" value="assign_games?judge_id={{ judge.id }}" />
         <table class="table">
@@ -77,7 +77,7 @@
     them for review anyway as you see appropriate:
 
     <form method="post" action="assign">
-        {% csrf_token %}
+        {{ csrf_token() }}
         <input type="hidden" name="judge_id" value="{{ judge.id }}" />
         <input type="hidden" name="return_to" value="assign_games?judge_id={{ judge.id }}" />
         <table class="table">

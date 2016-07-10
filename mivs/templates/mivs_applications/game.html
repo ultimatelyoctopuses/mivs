@@ -18,7 +18,7 @@
 
 <form method="post" action="game" class="form-horizontal" role="form">
     <input type="hidden" name="id" value="{{ game.db_id }}" />
-    {% csrf_token %}
+    {{ csrf_token() }}
 
     <div class="form-group">
         <label class="col-sm-3 control-label">Game Title:</label>

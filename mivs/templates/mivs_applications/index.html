@@ -35,7 +35,7 @@ This is your application-in-progress for the MAGFest Indie Videogame Showcase fo
                     <i>Primary Contact</i>
                 {% else %}
                     <form method="post" action="delete_developer">
-                        {% csrf_token %}
+                        {{ csrf_token() }}
                         <input type="hidden" name="id" value="{{ developer.id }}" />
                         <input type="submit" value="Delete" />
                     </form>
@@ -84,7 +84,7 @@ You have {% if c.BEFORE_ROUND_ONE_DEADLINE %}currently{% endif %} registered {{ 
                 Once you're ready for our judges to look at the video link you've provided, you can submit it
                 to our panel of judges for consideration anytime until {{ c.ROUND_ONE_DEADLINE|datetime }}:
                 <form method="post" action="submit_video">
-                    {% csrf_token %}
+                    {{ csrf_token() }}
                     <input type="hidden" name="id" value="{{ game.id }}" />
                     <input type="submit" value="Submit Video for Consideration" />
                 </form>
@@ -110,7 +110,7 @@ You have {% if c.BEFORE_ROUND_ONE_DEADLINE %}currently{% endif %} registered {{ 
                     to manage the game codes and screenshots after submitting.  Our judges will not look at your game until you
                     officially submit it by clicking this button:
                     <form method="post" action="submit_game" class="form-horizontal">
-                        {% csrf_token %}
+                        {{ csrf_token() }}
                         <input type="hidden" name="id" value="{{ game.id }}" />
                         <input type="submit" value="Submit Game For Consideration" />
                     </form>
@@ -136,7 +136,7 @@ You have {% if c.BEFORE_ROUND_ONE_DEADLINE %}currently{% endif %} registered {{ 
                             <td>{{ code.code }}</td>
                             <td>
                                 <form method="post" action="delete_code">
-                                {% csrf_token %}
+                                {{ csrf_token() }}
                                 <input type="hidden" name="id" value="{{ code.id }}" />
                                 <input type="submit" value="Delete" />
                                 </form>
@@ -160,7 +160,7 @@ You have {% if c.BEFORE_ROUND_ONE_DEADLINE %}currently{% endif %} registered {{ 
                     <td>{{ screenshot.description }}</td>
                     <td>
                         <form method="post" action="delete_screenshot">
-                        {% csrf_token %}
+                        {{ csrf_token() }}
                         <input type="hidden" name="id" value="{{ screenshot.id }}" />
                         <input type="submit" value="Delete" />
                         </form>

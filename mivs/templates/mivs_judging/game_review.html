@@ -8,7 +8,7 @@ for reviewing the game:
 
 <form method="post" action="game_review" role="form" class="form-horizontal">
     <input type="hidden" name="id" value="{{ review.id }}" />
-    {% csrf_token %}
+    {{ csrf_token() }}
 
     <div class="form-group">
         <label class="col-sm-3 control-label">Game Title:</label>

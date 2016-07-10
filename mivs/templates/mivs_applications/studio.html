@@ -18,7 +18,7 @@
 
 {% if c.BEFORE_ROUND_ONE_DEADLINE or not studio.is_new %}
     <form method="post" action="studio" class="form-horizontal" role="form">
-        {% csrf_token %}
+        {{ csrf_token() }}
 
         <div class="form-group">
             <label class="col-sm-3 control-label">Studio Name:</label>
