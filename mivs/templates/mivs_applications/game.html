@@ -151,7 +151,7 @@
     <div class="form-group">
         <label class="col-sm-3 control-label">Showtime Agreement:</label>
         <div class="col-sm-6">
-            {% checkbox game.agreed_showtimes %}
+            {{ macros.checkbox(game, 'agreed_showtimes') }}
             At least one person from my team will be available to man our booth from 11am to 7pm each full convention day and
             on the last day from 11am to 2pm.  Core hours exist each day to ensure games are setup for attendees to play. Games
             may be setup past core hours as the MIVS area is open 24 hours and will have volunteers on hand during this time.
@@ -161,7 +161,7 @@
     <div class="form-group">
         <label class="col-sm-3 control-label">Liability Waiver:</label>
         <div class="col-sm-6">
-            {% checkbox game.agreed_liability %}
+            {{ macros.checkbox(game, 'agreed_liability') }}
             I understand that I am responsible for all equipment brought to the indie showcase by myself or my team,
             and we do not hold liable MAGFest, MIVS, or the venue in the event equipment is stolen or damaged.
         </div>
